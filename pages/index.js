@@ -100,7 +100,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Scatter</title>
+        <title>Fraction</title>
         <meta
           name="description"
           content="Fractionalise your NFTs for more liquidity"
@@ -113,7 +113,7 @@ export default function Home() {
           <div className="w-full h-screen z-0 border-4">
             <div className="absolute bottom-0 left-0 ml-16 mb-28 w-content">
               <h1 className=" font-serif text-6xl font-bold mb-4 text-greenKelp-500">
-                Scatter
+                Fraction
               </h1>
               <p className="font-sans text-l text-greenKelp-500 font-normal ">
                 A vision of truly distributed and decentralised NFT world with

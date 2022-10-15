@@ -6,7 +6,7 @@ import {
   CHAINID_NOT_SUPPORTED,
 } from "../constants/constants";
 
-const Navbar = ({ pageLoad = "DEFAULT", setWalletContext }) => {
+const Navbar = ({ pageLoad = "Default", setWalletContext }) => {
   const [wallet, setWallet] = useState({
     provider: "",
     address: "",
@@ -49,7 +49,7 @@ const Navbar = ({ pageLoad = "DEFAULT", setWalletContext }) => {
   };
 
   useEffect(() => {
-    if (pageLoad !== "DEFAULT") {
+    if (!["Default", "Trade"].includes(pageLoad)) {
       connectWallet(wallet);
     }
   }, []);
@@ -61,7 +61,7 @@ const Navbar = ({ pageLoad = "DEFAULT", setWalletContext }) => {
           href="/"
           className=" font-serif w-32 border-r-2 border-black px-3 py-3 text-greenKelp-500 hover:text-emerald-700 text-2xl font-bold"
         >
-          Scatter
+          Fraction
         </Link>
         {[
           ["Fractionalise", "/fractionalise", true],
@@ -84,7 +84,7 @@ const Navbar = ({ pageLoad = "DEFAULT", setWalletContext }) => {
           </Link>
         ))}
         <div className="flex-1"> </div>
-        {pageLoad !== "DEFAULT" ? (
+        {!["Default", "Trade"].includes(pageLoad) ? (
           wallet.loading ? (
             ""
           ) : wallet.error === "METAMASK_NOT_INSTALLED" ? (
@@ -92,7 +92,6 @@ const Navbar = ({ pageLoad = "DEFAULT", setWalletContext }) => {
               onClick={() => connectWallet(wallet)}
               className="rounded bg-emerald-900 hover:bg-emerald-700 text-white px-3 py-3 text-slate-700 text-base font-normal"
             >
-              {" "}
               Connect To Metamask
             </button>
           ) : (
@@ -100,7 +99,6 @@ const Navbar = ({ pageLoad = "DEFAULT", setWalletContext }) => {
               disabled
               className="rounded-full border-2 border-teal-800 bg-neutral-700 text-white px-8 py-2.5 font-normal text-sm"
             >
-              {" "}
               {wallet.address.substring(0, 6) +
                 "..." +
                 wallet.address.substring(
