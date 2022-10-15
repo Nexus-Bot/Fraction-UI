@@ -5,6 +5,7 @@ import { ethers } from "ethers";
 import {
   OPENSEA_LINK,
   FRACTION_CONTRACT_ADDRESS,
+  MUMBAI_CONTRACT_BASE_URL,
 } from "../constants/constants";
 import contractABI from "../public/fractionABI.json";
 import ERC1155ABI from "../public/ERC1155ABI.json";
@@ -159,7 +160,7 @@ const MergeCard = ({ nftData = {}, walletContext }) => {
               <div className="flex-1" />
               <a
                 className="text-sm text-emerald-900 hover:text-emerald-700"
-                href={`https://etherscan.io/address/${data.originalAddress}`}
+                href={`${MUMBAI_CONTRACT_BASE_URL + data.originalAddress}`}
                 rel="noreferrer"
                 target="_blank"
               >
@@ -178,7 +179,7 @@ const MergeCard = ({ nftData = {}, walletContext }) => {
               <div className="flex-1" />
               <a
                 className="text-sm text-emerald-900 hover:text-emerald-700"
-                href={`https://rinkeby.etherscan.io//address/${data.fractionAddress}`}
+                href={`${MUMBAI_CONTRACT_BASE_URL + data.fractionAddress}`}
                 rel="noreferrer"
                 target="_blank"
               >

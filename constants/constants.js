@@ -11,7 +11,9 @@ export const FRACTION_CONTRACT_ADDRESS =
   "0xd4B71e9D524FB4925c8C3044b45f5FdABbad976e";
 
 //Opensea Details
-export const OPENSEA_LINK = "https://testnets.opensea.io/assets/rinkeby/";
+export const OPENSEA_LINK = "https://testnets.opensea.io/assets/mumbai/";
+export const MUMBAI_CONTRACT_BASE_URL =
+  "https://mumbai.polygonscan.com/address/";
 
 //Faucet Contract
 export const FAUCET_CONTRACT_ADDRESS =

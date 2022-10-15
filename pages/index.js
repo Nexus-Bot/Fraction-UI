@@ -261,7 +261,7 @@ const NFTCard = ({ nftData }) => {
             <div className="flex-1" />
             <a
               className="text-sm text-emerald-900 hover:text-emerald-700"
-              href={`https://etherscan.io/address/${data.originalAddress}`}
+              href={`https://mumbai.polygonscan.com/address/${data.originalAddress}`}
               rel="noreferrer"
               target="_blank"
             >
@@ -280,7 +280,7 @@ const NFTCard = ({ nftData }) => {
             <div className="flex-1" />
             <a
               className="text-sm text-emerald-900 hover:text-emerald-700"
-              href={`https://rinkeby.etherscan.io//address/${data.fractionAddress}`}
+              href={`https://mumbai.polygonscan.com/address/${data.fractionAddress}`}
               rel="noreferrer"
               target="_blank"
             >

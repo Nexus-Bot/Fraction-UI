@@ -1,6 +1,6 @@
 import Navbar from "../components/NavBar";
 import { BottomBar } from ".";
-import { OPENSEA_LINK } from "../constants/constants";
+import { OPENSEA_LINK, MUMBAI_CONTRACT_BASE_URL } from "../constants/constants";
 import { useEffect, useState } from "react";
 
 var myHeaders = new Headers();
@@ -67,7 +67,7 @@ const TradeCard = ({ nftData = {} }) => {
             <div className="flex-1" />
             <a
               className="text-sm text-emerald-900 hover:text-emerald-700"
-              href={`https://etherscan.io/address/${data.originalAddress}`}
+              href={`${MUMBAI_CONTRACT_BASE_URL + data.originalAddress}`}
               rel="noreferrer"
               target="_blank"
             >
@@ -86,7 +86,7 @@ const TradeCard = ({ nftData = {} }) => {
             <div className="flex-1" />
             <a
               className="text-sm text-emerald-900 hover:text-emerald-700"
-              href={`https://rinkeby.etherscan.io//address/${data.fractionAddress}`}
+              href={`${MUMBAI_CONTRACT_BASE_URL + data.fractionAddress}`}
               rel="noreferrer"
               target="_blank"
             >
