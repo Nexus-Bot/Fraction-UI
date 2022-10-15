@@ -12,3 +12,7 @@ export const FRACTION_CONTRACT_ADDRESS =
 
 //Opensea Details
 export const OPENSEA_LINK = "https://testnets.opensea.io/assets/rinkeby/";
+
+//Faucet Contract
+export const FAUCET_CONTRACT_ADDRESS =
+  "0xaaf02aB9a24c0BE1D7ede365e20cD662061041Ba";

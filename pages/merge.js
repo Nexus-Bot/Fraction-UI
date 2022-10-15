@@ -1,6 +1,6 @@
 import Navbar from "../components/NavBar";
 import { useState, useEffect } from "react";
-import { FooterData } from ".";
+import { BottomBar } from ".";
 import { ethers } from "ethers";
 import {
   OPENSEA_LINK,
@@ -23,7 +23,7 @@ var requestOptions = (FETCH_TYPE) => {
 
 function FETCH_OWNER_FRAC_NFTS(owner) {
   let jsonData = JSON.stringify({
-    query: `{\n  tokens(first: 20) {\n    id\n    tokenId\n    owner\n    fractionContract\n    tokenURI\n originalContract\n    fractionCount\n  }\n}\n`,
+    query: `{\n  tokens(where: { fractionCount_gt: 0}) {\n    id\n    tokenId\n    owner\n    fractionContract\n    tokenURI\n originalContract\n    fractionCount\n  }\n}\n`,
     variables: {},
   });
   return jsonData;
@@ -136,15 +136,15 @@ const MergeCard = ({ nftData = {}, walletContext }) => {
       >
         <div>
           {data.imageLoading ? (
-            <div className="animate-pulse flex items-center justify-center h-60 w-72 md:h-60 md:w-60 lg:h-72 lg:w-72">
+            <div className="animate-pulse flex items-center justify-center h-72 w-80 md:h-80 md:w-80 lg:h-72 lg:w-72">
               <svg
-                className="h-52 w-60 md:h-52 md:w-52 lg:h-60 lg:w-60 rounded-lg bg-gray-200"
+                className="h-64 w-72 md:h-72 md:w-72 lg:h-64 lg:w-64 rounded-lg bg-gray-200"
                 viewBox="0 0 24 24"
               />
             </div>
           ) : (
             <img
-              className="rounded-t-lg h-60 w-72 md:h-60 md:w-60 lg:h-72 lg:w-72"
+              className="rounded-t-lg h-72 w-80 md:h-80 md:w-80 lg:h-72 lg:w-72"
               src={data.nftImage}
               alt=""
             />
@@ -154,7 +154,7 @@ const MergeCard = ({ nftData = {}, walletContext }) => {
           <div className="px-4 py-2 lg:py-4">
             <div className="flex flex-row">
               <p className="text-emerald-700 text-sm font-semibold mb-2">
-                Original Address:
+                Original Address:{" "}
               </p>
               <div className="flex-1" />
               <a
@@ -168,12 +168,12 @@ const MergeCard = ({ nftData = {}, walletContext }) => {
                   data.originalAddress.substring(
                     data.originalAddress.length - 4,
                     data.originalAddress.length
-                  )}
+                  )}{" "}
               </a>
             </div>
             <div className="flex flex-row">
               <p className="text-emerald-700 text-sm font-semibold mb-2">
-                Fraction Address:
+                Fraction Address:{" "}
               </p>
               <div className="flex-1" />
               <a
@@ -187,12 +187,12 @@ const MergeCard = ({ nftData = {}, walletContext }) => {
                   data.fractionAddress.substring(
                     data.fractionAddress.length - 4,
                     data.fractionAddress.length
-                  )}
+                  )}{" "}
               </a>
             </div>
             <div className="flex flex-row">
               <p className="text-emerald-700 text-sm font-semibold mb-2">
-                Token Id:
+                Token Id:{" "}
               </p>
               <div className="flex-1" />
               <p className="text-sm text-emerald-900">{data.tokenID}</p>
@@ -203,7 +203,7 @@ const MergeCard = ({ nftData = {}, walletContext }) => {
               </p>
               <div className="flex-1" />
               <p className="text-sm text-emerald-900">
-                {data.availableFractionCount}/{data.fractionCount}
+                {data.availableFractionCount}/{data.fractionCount}{" "}
               </p>
             </div>
           </div>
@@ -276,8 +276,8 @@ const Merge = () => {
   return (
     <div className="w-full min-h-content bg-gin-50">
       <Navbar pageLoad="Merge" setWalletContext={setWalletContext} />
-      <div className="pt-10 min-h-screen z-10 w-full">
-        <div className="pt-20 z-0 w-full">
+      <div className="min-h-screen z-10 w-full py-10">
+        <div className="pt-28 z-0 w-full">
           <div className="flex flex-rows justify-center w-full">
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-6 lg:gap-10 xl:gap-12">
               {ownerFractionData.map((data) => (
@@ -291,6 +291,7 @@ const Merge = () => {
           </div>
         </div>
       </div>
+      {/* <BottomBar /> */}
     </div>
   );
 };

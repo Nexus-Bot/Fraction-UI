@@ -1,7 +1,7 @@
 import Navbar from "../components/NavBar";
 import { ethers } from "ethers";
 import { useEffect, useReducer, useState } from "react";
-import { FooterData } from ".";
+import { BottomBar } from ".";
 import {
   ERC_721,
   MAX_FRACTION_COUNT,
@@ -104,7 +104,7 @@ const FractionCard = ({ walletNFTsList = [], walletContext }) => {
 
   return (
     <>
-      <div className="py-20 z-0 w-full">
+      <div className="pt-28 z-0 w-full">
         <div className="flex flex-rows justify-center w-full">
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-6 lg:gap-10 xl:gap-12">
             {walletNFTsList.map((data) => (
@@ -114,7 +114,7 @@ const FractionCard = ({ walletNFTsList = [], walletContext }) => {
               >
                 <div className="m-h-60">
                   <img
-                    className="rounded-t-lg h-60 w-72 md:h-60 md:w-60 lg:h-72 lg:w-72"
+                    className="rounded-t-lg h-72 w-80 md:h-80 md:w-80 lg:h-72 lg:w-72"
                     src={data.nftImage}
                     alt=""
                   />
@@ -243,13 +243,14 @@ const Fractionalise = () => {
     <>
       <Navbar pageLoad="Fraction" setWalletContext={setWalletContext} />
       <div className="w-full min-h-content bg-gin-50">
-        <div className="pt-10 min-h-screen z-10 w-full">
+        <div className="py-10 min-h-screen z-10 w-full">
           <FractionCard
             walletNFTsList={nftsList}
             walletContext={walletContext}
           />
         </div>
       </div>
+      {/* <BottomBar /> */}
     </>
   );
 };
