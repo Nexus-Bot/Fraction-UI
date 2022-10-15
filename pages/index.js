@@ -137,7 +137,8 @@ export const FooterData = () => {
           </p>
           <p className="text-center text-white text-sm md:text-lg xl:text-lg p-4 md:p-8 lg:p-10">
             Chat with the team and others in the community to learn more about
-            fractional.art and help shape the future of the fractional protocol.
+            dev.tryscatter.xyz and provide you feedback to help us serve the
+            community better.
           </p>
           <div className="flex items-center sm:justify-center flex-col sm:flex-row">
             <div className="rounded-lg h-20 w-28 sm:h-20 sm:w-36 md:h-32 md:w-48 lg:h-32 lg:w-48 xl:h-40 xl:w-64 m-2 md:m-6 xl:m-10 flex items-center justify-center bg-greenKelp-100 hover:bg-gin-400">
@@ -400,10 +401,10 @@ export default function Home() {
               </Link>
               your NFTs
             </div>
-            <div className="text-sm text-center text-xl md:text-2xl lg:text-2xl xl:text-3xl mt-4 md:mt-8 lg:mt-10 text-greenKelp-400">
-              Fractional ownership of the world’s most sought after NFTs.
-              Fractional reduces entry costs, increases access, and enables new
-              communities.
+            <div className="text-sm text-center text-xl md:text-2xl lg:text-lg xl:text-xl mt-4 md:mt-8 lg:mt-6 text-greenKelp-400">
+              Scatter provides ownership of the world’s most sought after NFTs
+              in fractions. Scatter omits creator fees, reduces entry costs,
+              expand communities and increases access.
             </div>
           </div>
           <div className="relative flex justify-center items-center w-full h-2/6 lg:w-1/2 md:h-1/2 lg:h-5/6 p-10 md:p-20 lg:p-24">
@@ -430,8 +431,8 @@ export default function Home() {
             iconic and historic NFTs
           </div>
           <div className="mt-2 md:mt-6 text-base md:text-xl font-base md:fond-semibold text-greenKelp-400 text-center">
-            Fractionalization is also a unique way to unlock NFT liquidity and
-            community building around popular NFTs.
+            Fractionalization allows new investers to be part of the community
+            and increases the overall adoption.
           </div>
         </div>
         <RecentActivity fractionData={fractionData} />
