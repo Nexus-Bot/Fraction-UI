@@ -10,7 +10,7 @@ const Default = () => {
         <p className="text-white text-6xl">An Innovation In NFT Space</p>
         <Link href="/fractionalise">
           <button className="font-mono mt-32 rounded bg-stiletto-500 hover:bg-stiletto-300 border-2 border-white text-white px-8 py-3 text-base font-normal">
-            Fractionalise >
+            Fractionalise &gt;
           </button>
         </Link>
       </div>
@@ -25,7 +25,7 @@ const Fractionalise = () => {
         <p className="text-white text-6xl">Fractionalise Your NFTs</p>
         <Link href="/fractionalise">
           <button className="font-mono mt-32 rounded bg-stiletto-500 hover:bg-stiletto-300 border border-white text-white px-8 py-3 text-base font-normal">
-            Fractionalise >
+            Fractionalise &gt;
           </button>
         </Link>
       </div>
@@ -40,7 +40,7 @@ const Merge = () => {
         <p className="text-white text-6xl">Collect Fractions And Merge</p>
         <Link href="/merge">
           <button className="font-mono mt-32 rounded bg-stiletto-500 hover:bg-stiletto-300 border border-white text-white px-8 py-3 text-base font-normal">
-            Merge >
+            Merge &gt;
           </button>
         </Link>
       </div>
@@ -73,7 +73,7 @@ const Trade = () => {
         <p className="text-white text-6xl">Trade On NFT Marketplaces</p>
         <Link href="/trade">
           <button className="font-mono mt-32 rounded bg-stiletto-500 hover:bg-stiletto-300 border border-white text-white px-8 py-3 text-base font-normal">
-            Trade >
+            Trade &gt;
           </button>
         </Link>
       </div>

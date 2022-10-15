@@ -1,5 +1,6 @@
 import Navbar from "../components/NavBar";
 import { FooterData } from ".";
+import Image from "next/image";
 
 const TradeCard = ({ fractionDataList }) => {
   return (
@@ -11,7 +12,7 @@ const TradeCard = ({ fractionDataList }) => {
             key={data.originalAddress + "-" + data.tokenID}
           >
             <a href="#!">
-              <img className="rounded-t-lg" src={data.nftImage} alt="" />
+              <Image className="rounded-t-lg" src={data.nftImage} alt="" />
             </a>
             <div className="p-6">
               <div className="flex flex-row">
@@ -23,6 +24,7 @@ const TradeCard = ({ fractionDataList }) => {
                   className="text-sm text-emerald-900 hover:text-emerald-700"
                   href={`https://etherscan.io/address/${data.originalAddress}`}
                   target="_blank"
+                  rel="noreferrer"
                 >
                   {data.originalAddress.substring(0, 6) +
                     "..." +
@@ -41,6 +43,7 @@ const TradeCard = ({ fractionDataList }) => {
                   className="text-sm text-emerald-900 hover:text-emerald-700"
                   href={`https://rinkeby.etherscan.io//address/${data.fractionAddress}`}
                   target="_blank"
+                  rel="noreferrer"
                 >
                   {data.fractionAddress.substring(0, 6) +
                     "..." +

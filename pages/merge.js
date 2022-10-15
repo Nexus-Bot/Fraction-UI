@@ -1,5 +1,6 @@
 import Navbar from "../components/NavBar";
 import { FooterData } from ".";
+import Image from "next/image";
 
 const MergeCard = ({ ownerFractionDataList }) => {
   return (
@@ -13,7 +14,7 @@ const MergeCard = ({ ownerFractionDataList }) => {
               key={data.originalAddress + "-" + data.tokenID}
             >
               <a href="#!">
-                <img className="rounded-t-lg" src={data.nftImage} alt="" />
+                <Image className="rounded-t-lg" src={data.nftImage} alt="" />
               </a>
               <div className="p-6">
                 <div className="flex flex-row">

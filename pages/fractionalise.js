@@ -10,6 +10,8 @@ import {
 } from "../constants/constants";
 import contractABI from "../public/fractionABI.json";
 import ERC721ABI from "../public/ERC721ABI.json";
+import Link from "next/link";
+import Image from "next/image";
 
 const maxFractionCount = MAX_FRACTION_COUNT;
 
@@ -115,7 +117,7 @@ const FractionCard = ({ walletNFTsList = [], walletContext }) => {
                 key={data.originalAddress + "-" + data.tokenID}
               >
                 <div className="m-h-60">
-                  <img className="rounded-t-lg" src={data.nftImage} alt="" />
+                  <Image className="rounded-t-lg" src={data.nftImage} alt="" />
                 </div>
                 <div className="p-6">
                   <div className="flex flex-row">
@@ -123,7 +125,7 @@ const FractionCard = ({ walletNFTsList = [], walletContext }) => {
                       Original Address:{" "}
                     </p>
                     <div className="flex-1" />
-                    <a
+                    <Link
                       className="text-sm text-emerald-900 hover:text-emerald-700"
                       href={`https://rinkeby.etherscan.io/address/${data.originalAddress}`}
                       target="_blank"
@@ -135,7 +137,7 @@ const FractionCard = ({ walletNFTsList = [], walletContext }) => {
                           data.originalAddress.length - 6,
                           data.originalAddress.length
                         )}{" "}
-                    </a>
+                    </Link>
                   </div>
                   <div className="flex flex-row">
                     <p className="text-emerald-700 text-sm font-semibold mb-2">

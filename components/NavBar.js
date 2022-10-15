@@ -1,4 +1,5 @@
 import { ethers } from "ethers";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import {
   METAMASK_NOT_INSTALLED,
@@ -56,12 +57,12 @@ const Navbar = ({ pageLoad = "DEFAULT", setWalletContext }) => {
   return (
     <div className="p-2 fixed top-0 border-b-2 border-emerald-900 bg-gin-50 w-full z-20 h-content">
       <nav className="flex items-center space-x-6">
-        <a
+        <Link
           href="/"
           className=" font-serif w-32 border-r-2 border-black px-3 py-3 text-greenKelp-500 hover:text-emerald-700 text-2xl font-bold"
         >
           Scatter
-        </a>
+        </Link>
         {[
           ["Fractionalise", "/fractionalise", true],
           ["Trade", "/trade", true],
@@ -70,7 +71,7 @@ const Navbar = ({ pageLoad = "DEFAULT", setWalletContext }) => {
           // ['FAQ', '/faq', true],
           // ['About Us', '/about', true],
         ].map(([title, url, active]) => (
-          <a
+          <Link
             key={title}
             href={active ? url : ""}
             className={`px-3 py-3 text-l font-semibold ${
@@ -80,7 +81,7 @@ const Navbar = ({ pageLoad = "DEFAULT", setWalletContext }) => {
             } ${pageLoad === title ? "border-b-2 border-emerald-500" : ""}`}
           >
             {title}
-          </a>
+          </Link>
         ))}
         <div className="flex-1"> </div>
         {pageLoad !== "DEFAULT" ? (
