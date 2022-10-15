@@ -30,7 +30,7 @@ function FETCH_OWNER_FRAC_NFTS(owner) {
 }
 
 const MergeCard = ({ nftData = {}, walletContext }) => {
-  const [data, setdata] = useState(nftData);
+  const [data, setdata] = useState({ ...nftData, imageLoading: true });
 
   const fetchFractionCount = async () => {
     const fractionalAddress = new ethers.Contract(
@@ -115,12 +115,12 @@ const MergeCard = ({ nftData = {}, walletContext }) => {
     }
     availableFractionCount = await fetchFractionCount();
 
-    console.log("Fraction Count: ", availableFractionCount);
-
+    let nftImage = nftMeta.image.replace("ipfs://", "https://ipfs.io/ipfs/");
     setdata({
       ...data,
       availableFractionCount: availableFractionCount,
-      nftImage: nftMeta.image.replace("ipfs://", "https://ipfs.io/ipfs/"),
+      nftImage: nftImage,
+      imageLoading: false,
     });
   };
 
@@ -134,18 +134,27 @@ const MergeCard = ({ nftData = {}, walletContext }) => {
         className="rounded-lg shadow-lg bg-white w-fit mb-0"
         key={data.originalAddress + "-" + data.tokenID}
       >
-        <div className="m-h-60">
-          <img
-            className="rounded-t-lg h-60 w-72 md:h-60 md:w-60 lg:h-72 lg:w-72"
-            src={data.nftImage}
-            alt=""
-          />
+        <div>
+          {data.imageLoading ? (
+            <div className="animate-pulse flex items-center justify-center h-60 w-72 md:h-60 md:w-60 lg:h-72 lg:w-72">
+              <svg
+                className="h-52 w-60 md:h-52 md:w-52 lg:h-60 lg:w-60 rounded-lg bg-gray-200"
+                viewBox="0 0 24 24"
+              />
+            </div>
+          ) : (
+            <img
+              className="rounded-t-lg h-60 w-72 md:h-60 md:w-60 lg:h-72 lg:w-72"
+              src={data.nftImage}
+              alt=""
+            />
+          )}
         </div>
         <div className="w-content">
           <div className="px-4 py-2 lg:py-4">
             <div className="flex flex-row">
               <p className="text-emerald-700 text-sm font-semibold mb-2">
-                Original Address:{" "}
+                Original Address:
               </p>
               <div className="flex-1" />
               <a
@@ -159,12 +168,12 @@ const MergeCard = ({ nftData = {}, walletContext }) => {
                   data.originalAddress.substring(
                     data.originalAddress.length - 4,
                     data.originalAddress.length
-                  )}{" "}
+                  )}
               </a>
             </div>
             <div className="flex flex-row">
               <p className="text-emerald-700 text-sm font-semibold mb-2">
-                Fraction Address:{" "}
+                Fraction Address:
               </p>
               <div className="flex-1" />
               <a
@@ -178,12 +187,12 @@ const MergeCard = ({ nftData = {}, walletContext }) => {
                   data.fractionAddress.substring(
                     data.fractionAddress.length - 4,
                     data.fractionAddress.length
-                  )}{" "}
+                  )}
               </a>
             </div>
             <div className="flex flex-row">
               <p className="text-emerald-700 text-sm font-semibold mb-2">
-                Token Id:{" "}
+                Token Id:
               </p>
               <div className="flex-1" />
               <p className="text-sm text-emerald-900">{data.tokenID}</p>
@@ -194,7 +203,7 @@ const MergeCard = ({ nftData = {}, walletContext }) => {
               </p>
               <div className="flex-1" />
               <p className="text-sm text-emerald-900">
-                {data.availableFractionCount}/{data.fractionCount}{" "}
+                {data.availableFractionCount}/{data.fractionCount}
               </p>
             </div>
           </div>
