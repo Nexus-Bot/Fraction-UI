@@ -209,7 +209,7 @@ function fetchNfts(owner, setNftsList) {
   };
 
   fetch(
-    `https://eth-rinkeby.alchemyapi.io/v2/9QLQtE0COOGdYHOSbo43OOYPqZ_Fw2OM/getNFTs/?owner=${owner}`,
+    `https://polygon-mumbai.g.alchemy.com/v2/l0jLil9DtS2WsAcK8r9_bq7GBNrWHTFk/getNFTs/?owner=${owner}`,
     requestOptions
   )
     .then((response) => response.json())
